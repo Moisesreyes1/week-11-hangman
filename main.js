@@ -42,39 +42,36 @@ hangMan = {
 			prompt.get(['guessLetter'], function(err, result) {
 				console.log("Letter selected: " + result.guessLetter);
 
-		// Var to be able to refer to this
-		var self = this;
-
 		//Var for correct guesses
-		var correctGuess = self.currentPhrase.foundLetter(result.guessLetter);
+		var correctGuess = currentPhrase.foundLetter(result.guessLetter);
 
 		//Check if correct or incorrect letter selected by user
 		if (correctGuess == 0) {
 			console.log ("Try again!");
-			self.guessesRemaining--;
+			guessesRemaining--;
 		}
 		else {
 			console.log("Correct!");
 		//If all letters guesses
-			if (self.currentPhrase.foundLetter()) {
+			if (currentPhrase.foundLetter()) {
 				console.log("You Win!");
 				return;
 			}
 		}
 
-		console.log(self.currentPhrase.displayPhrase());
+		console.log(currentPhrase.displayPhrase());
 
 		//Keep asking if guesses remaining and phrase has not been guessed
-		if ((self.guessesRemaining >0)  && (self.currentPhrase.guessed == false)) {
+		if ((guessesRemaining >0)  && (currentPhrase.guessed == false)) {
 			this.keepAsking();
 		}
 
 		//If guesses wrong 10 letters before finding phrase
-		else if (self.guessesRemaining == 0) {
+		else if (guessesRemaining == 0) {
 			console.log("Game over");
 		}
 		else {
-			console.log(self.currentPhrase.displayPhrase());
+			console.log(currentPhrase.displayPhrase());
 		}
 
 	});

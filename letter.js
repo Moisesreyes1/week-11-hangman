@@ -1,8 +1,7 @@
 //Letter constructor function
-var Letter = function(alphabet, show) {
+var Letter = function(alphabet) {
 	this.alphabet = alphabet;
-	this.show = false;
-
+	
 	this.showLetter = function() {
 
 		return (this.show) "_" : this.alphabet;

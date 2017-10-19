@@ -2,7 +2,7 @@
 var Letter = require("./letter.js");
 
 //Constructor function for word
-var Word = function (phrase) {
+Word = function (phrase) {
 	this.phrase = phrase;
 	this.letters = [];
 	this.guessed = false;
